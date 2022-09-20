@@ -1,22 +1,41 @@
-version: "3.7"
+volumes:
+  randomizer-db:
+    external: true
 services:
+  react:
+    image: node:latest
+    command: npm start
+    working_dir: /app
+    volumes:
+      - ./ghi/randomizer:/app
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3001
+      - NODE_ENV=development
+    ports:
+      - "3001:3001"
   randomizer:
     build: 
-      context: ./randomizer
+      context: ./randomizer/api
       dockerfile: ./Dockerfile.dev
     ports:
       - "8000:8000"
     volumes:
-      - ./randomizer:/app
-  # react:
-  #   image: node:latest
-  #   command: npm start
-  #   working_dir: /app
-  #   volumes:
-  #     - ./ghi/app:/app
-  #   environment:
-  #     - HOST=0.0.0.0
-  #     - PORT=3001
-  #     - NODE_ENV=development
-  #   ports:
-  #     - "3001:3001"
+      - ./randomizer/api:/app
+    depends_on:
+      - database
+    environment:
+      DATABASE_URL: postgres://randomizer:password@database:5432/randomizer
+      WAIT_HOSTS: database:5432
+      WAIT_TIMEOUT: 240
+  database:
+    image: postgres:14.2-bullseye
+    volumes:
+      # creates local database 
+      - randomizer-db:/var/lib/postgresql/data
+      - ./randomizer-db:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_MULTIPLE_DATABASES=randomizer
+      - POSTGRES_PASSWORD=test-databases
+    ports:
+      - 15432:5432

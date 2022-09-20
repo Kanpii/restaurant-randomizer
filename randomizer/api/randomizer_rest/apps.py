@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class RandomizerConfig(AppConfig):
+class RandomizerRestConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "randomizer"
+    name = "randomizer_rest"
