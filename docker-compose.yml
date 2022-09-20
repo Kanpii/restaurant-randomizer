@@ -28,6 +28,7 @@ services:
       DATABASE_URL: postgres://randomizer:password@database:5432/randomizer
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
+      YELP_API_KEY: ${YELP_API_KEY}
   database:
     image: postgres:14.2-bullseye
     volumes:
