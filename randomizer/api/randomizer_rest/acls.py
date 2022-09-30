@@ -19,11 +19,11 @@ YELP_API_KEY = os.environ["YELP_API_KEY"]
 #         return {"picture_url": None}
 
 
-def get_yelp(food, location): # response = requests.request('GET', url, headers=headers, params=url_params)
+def get_yelp(location, term): # response = requests.request('GET', url, headers=headers, params=url_params)
     headers = {"Authorization": 'bearer %s' % YELP_API_KEY}
     params = {
-        "term": food,
-        "limit": 1,
+        "term": term,
+        "limit": 25,
         "location": location,
         "radius": 10000,
     }
@@ -33,3 +33,4 @@ def get_yelp(food, location): # response = requests.request('GET', url, headers=
 
     # print(data, "from acls")
 
+# http://localhost:3000/api/test?location=fremont&term=cheese

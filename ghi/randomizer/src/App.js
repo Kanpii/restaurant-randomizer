@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { Component } from 'react';
+
+import FormPage from "./Yelp/FormPage";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. HELLO
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+//     constructor(props) {
+//     super(props);
+//     this.state = {
+//         location: null,
+//     };
+// }
+
+//     onFormSubmit = (location) => {
+//         this.setState({
+//             location: location,
+//         })
+//     }
+
+    render() {
+        return (
+            <div className="App">
+            
+            <FormPage />
+            </div>
+        );
+    } 
 }
+
 
 export default App;
