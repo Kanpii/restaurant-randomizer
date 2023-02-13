@@ -57,9 +57,6 @@ async handleSubmit(event) {
                     </div>
                     <h2 className = "heading-tertiary RestaurantInfo__name">{this.state.result.name}</h2>
                     
-                    {/* <p className = "RestaurantInfo__para">
-                        {this.state.result.location.display_address[0]}, {this.state.result.location.display_address[1]}
-                    </p> */}
                     
                     <p className = "RestaurantInfo__para">
                         {this.state.result.phone}

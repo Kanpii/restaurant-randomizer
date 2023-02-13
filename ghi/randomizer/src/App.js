@@ -7,18 +7,6 @@ import './App.css';
 
 
 class App extends Component {
-//     constructor(props) {
-//     super(props);
-//     this.state = {
-//         location: null,
-//     };
-// }
-
-//     onFormSubmit = (location) => {
-//         this.setState({
-//             location: location,
-//         })
-//     }
 
     render() {
         return (

@@ -5,6 +5,8 @@
 ## Getting started
 
 - Clone from https://github.com/Kanpii/restaurant-randomizer.git
+- Grab a Yelp API key from yelp.com
+- Toss the API key into a .env file as "YELP_API_KEY" 
 - Boot up Docker
 - cd into restaurant-randomizer directory
 - Run docker-compose build
@@ -19,8 +21,10 @@
 
 ## Description
 
-## Visuals
+    This project was built with Django on the backend, with React for the frontend. It uses the Yelp API to produce the search results. 
 
-## Installation
+## Upcoming Plans
+- Need to rewrite the React portion from class components to function components.
+- Need to add some HTML / CSS so it looks nice
 
 ## Usage
