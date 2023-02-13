@@ -1,3 +1,7 @@
+# Airbnb Sample Code
+    This code is in the airbnbCode.js file. 
+    It is a small portion of the project.
+
 # restaurant-randomizer
     An app to help you pick a restaurant when you are hungry! 
 
